@@ -1,0 +1,11 @@
+src/
+test/
+gulpfile.js
+*.log
+/.*/
+/build/
+/.gitignore
+/.npmignore
+/webpack.*
+/karma.*
+/coverage.*

@@ -1,0 +1,59 @@
+{
+  "name": "es6-karma-jasmine-webpack-boilerplate",
+  "version": "0.4.0",
+  "description": "Boilerplate for ES6 client-based library. Uses Babel and webpack for transpiling and building, Karma and Jasmine for unit testing, and Istanbul/Isparta for code coverage.",
+  "main": "dist/calculator.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyml/es6-karma-jasmine-webpack-boilerplate"
+  },
+  "scripts": {
+    "build": "rimraf build && NODE_ENV=dev NODE_ENV=dev webpack --watch --config webpack.config.js",
+    "test": "NODE_ENV=dev karma start --no-auto-watch karma.conf.js",
+    "dist": "NODE_ENV=dist npm run build:dist && NODE_ENV=dev npm run test:dist",
+    "release": "sh release.sh",
+    "clean": "rimraf dist build",
+    "build:dist": "rimraf dist && NODE_ENV=dist webpack --config webpack.config.js",
+    "test:dist": "export NODE_ENV=dist && karma start --single-run --no-auto-watch karma.conf.js",
+    "preversion": "git checkout master && git merge develop && npm run test:dist",
+    "version": "npm run build:dist",
+    "postversion": "git add -A && git push --tags && git push origin master && npm publish "
+  },
+  "watch": {
+    "build": "{src,test}/*.js"
+  },
+  "keywords": [
+    "es6",
+    "babel",
+    "webpack",
+    "jasmine",
+    "karma",
+    "istanbul",
+    "boilerplate"
+  ],
+  "author": [
+    "Eddie Law"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-istanbul": "^0.6.0",
+    "babel-istanbul-loader": "0.0.1",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.3.13",
+    "jasmine-core": "^2.4.1",
+    "jasmine-spec-reporter": "^2.7.0",
+    "karma": "^0.13.19",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-jshint-preprocessor": "0.0.6",
+    "karma-phantomjs2-launcher": "^0.5.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.26",
+    "karma-webpack": "^1.7.0",
+    "loader-utils": "^0.2.12",
+    "rimraf": "^2.5.0",
+    "webpack": "^1.12.11"
+  }
+}
