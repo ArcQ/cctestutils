@@ -23,7 +23,6 @@ var config = {
 };
 
 if(process.env.NODE_ENV==='dev'){
-  console.log('webpack in development mode');
   config.devtool = 'inline-source-map';
   config.output.filename = './build/calculator.js';
 }
