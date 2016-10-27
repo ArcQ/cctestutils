@@ -8,7 +8,7 @@
     "url": "https://github.com/zyml/es6-karma-jasmine-webpack-boilerplate"
   },
   "scripts": {
-    "build": "rimraf build && NODE_ENV=dev NODE_ENV=dev webpack --watch --config webpack.config.js",
+    "start": "rimraf build && NODE_ENV=dev NODE_ENV=dev webpack --watch --config webpack.config.js",
     "test": "NODE_ENV=dev karma start --no-auto-watch karma.conf.js",
     "dist": "npm run test:dist && rimraf dist && NODE_ENV=dist webpack --config webpack.config.js",
     "release": "sh release.sh",
