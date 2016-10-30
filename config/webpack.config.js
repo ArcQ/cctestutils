@@ -1,7 +1,7 @@
 var config = {
   entry: ['./src/Calculator.js'],
   output: {
-    'filename': './dist/calculator.js',
+    'filename': './generated/dist/calculator.js',
     'libraryTarget': 'commonjs2',
     'library': 'calculator'
   },
@@ -24,10 +24,10 @@ var config = {
 
 if(process.env.NODE_ENV==='dev'){
   config.devtool = 'inline-source-map';
-  config.output.filename = './build/calculator.js';
+  config.output.filename = './generated/build/calculator.js';
 }
 else if(process.env.NODE_ENV==='dist'){
-  config.output.filename = './dist/calculator.js';
+  config.output.filename = './generated/dist/calculator.js';
 }
 
 module.exports = config;

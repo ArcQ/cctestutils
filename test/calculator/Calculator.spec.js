@@ -13,9 +13,3 @@ describe('Calculator', () => {
     expect(sub).toBe(3);
   });
 });
-
-if(proces.env.NODE_ENV==='dev'){
-  let fileDir = 'src';
-}
-
-console.log(fileDir);

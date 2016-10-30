@@ -10,17 +10,17 @@ module.exports = function (config) {
       ],
     },
     files: [
-      'test/tests.bundle.js',
+      '../test/tests.bundle.js',
     ],
     frameworks: [
       'jasmine',
     ],
     preprocessors: {
-      'test/tests.bundle.js': ['jshint', 'webpack', 'sourcemap'],
+      '../test/tests.bundle.js': ['jshint', 'webpack', 'sourcemap'],
     },
     reporters: ['spec', 'coverage'],
     jshintPreprocessor: {
-      jshintrc: './.jshintrc'
+      jshintrc: '../.jshintrc'
     },
     webpack: {
       cache: true,
@@ -49,7 +49,7 @@ module.exports = function (config) {
         loaders: [
           {
             test: /\.js$/,
-            include: path.resolve(__dirname, '../src'),
+            include: path.resolve(__dirname, './src'),
             exclude: /(bower_components|node_modules|__tests__)/,
             loader: 'babel',
             query: {
