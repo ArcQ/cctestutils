@@ -1,9 +1,9 @@
 var config = {
-  entry: ['./src/Calculator.js'],
+  entry: ['./src/main.js'],
   output: {
-    'filename': './dist/calculator.js',
+    'filename': './dist/test.js',
     'libraryTarget': 'commonjs2',
-    'library': 'calculator'
+    'library': 'test'
   },
   module: {
     loaders: [

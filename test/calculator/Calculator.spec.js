@@ -1,11 +1,4 @@
-if(process.env.NODE_ENV==='dev'){
-  var fileDir = 'src';
-}
-else if(process.env.NODE_ENV==='dist'){
-  fileDir = 'dist';
-}
-
-var Calculator = require('../../' + fileDir + '/Calculator');
+var Calculator = require('../../src/main.js');
 
 describe('Calculator', () => {
   it('should add two numbers', () => {
@@ -20,9 +13,3 @@ describe('Calculator', () => {
     expect(sub).toBe(3);
   });
 });
-
-if(proces.env.NODE_ENV==='dev'){
-  let fileDir = 'src';
-}
-
-console.log(fileDir);

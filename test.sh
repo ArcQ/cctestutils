@@ -1,2 +1,0 @@
-test='pwd'
-echo $test

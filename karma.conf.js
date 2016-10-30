@@ -10,8 +10,16 @@ module.exports = function (config) {
       ],
     },
     files: [
+      {pattern: 'node_modules/cc2dhtml5/CCBoot.js', watched: false, served: true},
+      {pattern: 'node_modules/cc2dhtml5/moduleConfig.json', watched: false, served: true, included: false},
+      {pattern: 'src/index.html', watched: false, served: true},
+      {pattern: 'src/project.json', watched: false, served: true, included: false},
       'test/tests.bundle.js',
     ],
+    proxies: {
+      '/project.json':'/base/src/project.json',
+      '/frameworks/cocos2d-html5/moduleConfig.json':'/base/node_modules/cc2dhtml5/moduleConfig.json'
+    },
     frameworks: [
       'jasmine',
     ],
