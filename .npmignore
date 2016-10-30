@@ -8,4 +8,12 @@ gulpfile.js
 /.npmignore
 /webpack.*
 /karma.*
-/coverage.*
+coverage
+node_modules
+release.sh
+babel.rc
+.jshintignore
+.jshintrc
+generated
+
+

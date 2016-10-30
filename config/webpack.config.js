@@ -1,7 +1,7 @@
 var config = {
   entry: ['./src/main.js'],
   output: {
-    'filename': './dist/test.js',
+    'filename': './generated/dist/calculator.js',
     'libraryTarget': 'commonjs2',
     'library': 'test'
   },
@@ -23,12 +23,11 @@ var config = {
 };
 
 if(process.env.NODE_ENV==='dev'){
-  console.log('webpack in development mode');
   config.devtool = 'inline-source-map';
-  config.output.filename = './build/calculator.js';
+  config.output.filename = './generated/build/calculator.js';
 }
 else if(process.env.NODE_ENV==='dist'){
-  config.output.filename = './dist/calculator.js';
+  config.output.filename = './generated/dist/calculator.js';
 }
 
 module.exports = config;

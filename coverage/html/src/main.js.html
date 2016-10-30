@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/main.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> main.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.22% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.22% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/9</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * A brief explanation for "project.json":
+ * Here is the content of project.json file, this is the global configuration for your game, you can modify it to customize some behavior.
+ * The detail of each field is under it.
+ {
+    "project_type": "javascript",
+    // "project_type" indicate the program language of your project, you can ignore this field
+&nbsp;
+    "debugMode"     : 1,
+    // "debugMode" possible values :
+    //      0 - No message will be printed.
+    //      1 - cc.error, cc.assert, cc.warn, cc.log will print in console.
+    //      2 - cc.error, cc.assert, cc.warn will print in console.
+    //      3 - cc.error, cc.assert will print in console.
+    //      4 - cc.error, cc.assert, cc.warn, cc.log will print on canvas, available only on web.
+    //      5 - cc.error, cc.assert, cc.warn will print on canvas, available only on web.
+    //      6 - cc.error, cc.assert will print on canvas, available only on web.
+&nbsp;
+    "showFPS"       : true,
+    // Left bottom corner fps information will show when "showFPS" equals true, otherwise it will be hide.
+&nbsp;
+    "frameRate"     : 60,
+    // "frameRate" set the wanted frame rate for your game, but the real fps depends on your game implementation and the running environment.
+&nbsp;
+    "id"            : "gameCanvas",
+    // "gameCanvas" sets the id of your canvas element on the web page, it's useful only on web.
+&nbsp;
+    "renderMode"    : 0,
+    // "renderMode" sets the renderer type, only useful on web :
+    //      0 - Automatically chosen by engine
+    //      1 - Forced to use canvas renderer
+    //      2 - Forced to use WebGL renderer, but this will be ignored on mobile browsers
+&nbsp;
+    "engineDir"     : "frameworks/cocos2d-html5/",
+    // In debug mode, if you use the whole engine to develop your game, you should specify its relative path with "engineDir",
+    // but if you are using a single engine file, you can ignore it.
+&nbsp;
+    "modules"       : ["cocos2d"],
+    // "modules" defines which modules you will need in your game, it's useful only on web,
+    // using this can greatly reduce your game's resource size, and the cocos console tool can package your game with only the modules you set.
+    // For details about modules definitions, you can refer to "../../frameworks/cocos2d-html5/modulesConfig.json".
+&nbsp;
+    "jsList"        : [
+    ]
+    // "jsList" sets the list of js files in your game.
+ }
+ *
+ */
+cc.game.onStart = <span class="fstat-no" title="function not covered" >function(){</span>
+    if(<span class="cstat-no" title="statement not covered" >!cc.sys.isNative &amp;&amp; document.getElementById("cocosLoading")) //If referenced loading.js, please remove it</span>
+        document.<span class="cstat-no" title="statement not covered" >body.removeChild(document.getElementById("cocosLoading"));</span>
+&nbsp;
+    // Pass true to enable retina display, disabled by default to improve performance
+    cc.<span class="cstat-no" title="statement not covered" >view.enableRetina(true);</span>
+    // Adjust viewport meta
+    cc.<span class="cstat-no" title="statement not covered" >view.adjustViewPort(true);</span>
+    // Setup the resolution policy and design resolution size
+    cc.<span class="cstat-no" title="statement not covered" >view.setDesignResolutionSize(800, 450, cc.ResolutionPolicy.SHOW_ALL);</span>
+    // The game will be resized when browser size change
+    cc.<span class="cstat-no" title="statement not covered" >view.resizeWithBrowserSize(true);</span>
+    MainCtrl.<span class="cstat-no" title="statement not covered" >start();</span>
+    
+};
+cc.game.run();
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Oct 30 2016 03:26:19 GMT-0400 (EDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
