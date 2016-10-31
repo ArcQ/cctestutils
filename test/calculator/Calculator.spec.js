@@ -1,4 +1,4 @@
-var Calculator = require('../../src/main.js');
+var Calculator = require('../../src/Calculator.js');
 
 describe('Calculator', () => {
   it('should add two numbers', () => {
