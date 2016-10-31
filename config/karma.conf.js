@@ -2,6 +2,7 @@ var path = require('path');
 
 module.exports = function (config) {
   config.set({
+    basePath:'../',
     browsers: ['PhantomJS2'],
     coverageReporter: {
       reporters: [
@@ -10,11 +11,11 @@ module.exports = function (config) {
       ],
     },
     files: [
-      {pattern: '../node_modules/cc2dhtml5/CCBoot.js', watched: false, served: true},
-      {pattern: '../node_modules/cc2dhtml5/moduleConfig.json', watched: false, served: true, included: false},
-      {pattern: '../src/index.html', watched: false, served: true},
-      {pattern: '../src/project.json', watched: false, served: true, included: false},
-      '../test/tests.bundle.js',
+      {pattern: 'node_modules/cc2dhtml5/CCBoot.js', watched: false, served: true},
+      {pattern: 'node_modules/cc2dhtml5/moduleConfig.json', watched: false, served: true, included: false},
+      {pattern: 'src/index.html', watched: false, served: true},
+      {pattern: 'src/project.json', watched: false, served: true, included: false},
+      'test/tests.bundle.js',
     ],
     proxies: {
       '/project.json':'/base/src/project.json',
@@ -24,11 +25,11 @@ module.exports = function (config) {
       'jasmine',
     ],
     preprocessors: {
-      '../test/tests.bundle.js': ['jshint', 'webpack', 'sourcemap'],
+      'test/tests.bundle.js': ['jshint', 'webpack', 'sourcemap'],
     },
     reporters: ['spec', 'coverage'],
     jshintPreprocessor: {
-      jshintrc: '../.jshintrc'
+      jshintrc: '.jshintrc'
     },
     webpack: {
       cache: true,
