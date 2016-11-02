@@ -11,6 +11,6 @@
   "modules" : ["cocos2d"],
 
   "jsList" : [
-    "src/main/resource.js"
+    "base/test/cocos2d/resource.js"
   ]
 }
