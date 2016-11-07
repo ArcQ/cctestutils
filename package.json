@@ -2,7 +2,7 @@
   "name": "es6-karma-jasmine-webpack-boilerplate",
   "version": "0.5.0",
   "description": "Boilerplate for ES6 client-based library. Uses Babel and webpack for transpiling and building, Karma and Jasmine for unit testing, and Istanbul/Isparta for code coverage.",
-  "main": "generated/dist/calculator.js",
+  "main": "generated/dist/cctestutils.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ArcQ/webpack-template"
