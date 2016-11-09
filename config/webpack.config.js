@@ -1,5 +1,5 @@
 var config = {
-  entry: ['./src/main.js'],
+  entry: ['./src/Calculator.js'],
   output: {
     'filename': './generated/dist/calculator.js',
     'libraryTarget': 'commonjs2',

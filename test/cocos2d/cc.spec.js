@@ -1,19 +1,9 @@
-let ccstart = require('./main.js');
-import waitUntil from 'wait-until-promise';
-let addCanvas = function(){
-  let canvasObject = document.createElement('canvas');
-  let width = 800;
-  let height = 800;
-  let myCanvas = {};  
-  canvasObject.width = width;
-  canvasObject.height= height;
-  canvasObject.setAttribute("id", "gameCanvas");
-  document.body.appendChild(canvasObject);
-};
+let cctestutils = require('cctestutils');
+let spriteTest = cctestutils.test.Sprite;
 
 beforeAll((done)=> {
-  addCanvas();
-  ccstart(done);
+  cctestutils.startup.addCanvas();
+  cctestutils.startup.ccstart(done);
 });
 
 describe('cc library object', () => {
@@ -30,16 +20,15 @@ describe('cc library object', () => {
 
   it('should be able to return a sprite', (done) => {
     let tSprite = new cc.Sprite(testRes.test);
-    waitUntil(
-      ()=>tSprite.texture,
-      2000
-    ).then(
-      (texture) => {
-        expect(texture.url).toEqual("base/test/res/test.png");
+    
+    spriteTest.checkEquals(tSprite,testRes.test).then((isSprite)=>{
+      expect(isSprite).toBe(true);
+      done();
+    }).catch(
+      (err)=>{
+        expect(err).toBeNull();
         done();
-      }
-    );
+      });
   });
-
 });
 

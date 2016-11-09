@@ -14,13 +14,13 @@ module.exports = function (config) {
       {pattern: 'node_modules/cc2dhtml5/CCBoot.js', watched: false, served: true, included:true},
       {pattern: 'node_modules/cc2dhtml5/**/*.js', watched: false, served: true, included: false},
       {pattern: 'node_modules/cc2dhtml5/moduleConfig.json', watched: false, served: true, included: false},
-      {pattern: 'test/cocos2d/resource.js', watched: false, served: true, included: false},
+      {pattern: 'node_modules/cctestutils/cocos2d/resource.js', watched: false, served: true, included: false},
       {pattern: 'test/res/**/*.png', watched: false, served: true, included: false},
-      {pattern: 'test/cocos2d/project.json', watched: false, served: true, included: false},
+      {pattern: 'node_modules/cctestutils/cocos2d/project.json', watched: false, served: true, included: false},
       'test/tests.bundle.js',
     ],
     proxies: {
-      '/project.json':'/base/test/cocos2d/project.json',
+      '/project.json':'/base/node_modules/cctestutils/cocos2d/project.json',
       '/frameworks/cocos2d-html5/':'/base/node_modules/cc2dhtml5/'
     },
     frameworks: [
