@@ -1,5 +1,5 @@
-let startup = require('modules/startup.js');
-let test = require('modules/test.js');
+let startup = require('./startup/startup.js');
+let test = require('./test/test.js');
 
 let cctestutils = {
   startup: startup,
