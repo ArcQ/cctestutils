@@ -1,4 +1,3 @@
-let ccstart = require('./main.js');
 import waitUntil from 'wait-until-promise';
 let startup = {
   addCanvas:()=>{
@@ -12,5 +11,6 @@ let startup = {
     document.body.appendChild(canvasObject);
   }
 };
-startup.ccstart = require('./main.js');
+console.log('start');
+startup.ccstart = require('./cocos2d/main.js');
 module.exports = startup;

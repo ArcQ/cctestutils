@@ -1,46 +1,65 @@
 import waitUntil from 'wait-until-promise';
 
-class common_tests{
-  constructor(){
-  }
+let _getCheckObj = (checkDict) => checkDict.obj[checkDict.propStr];
+
+let common = {
   //during tests, expects need to make sure to make sure cc objects such as sprites are fully initiated
-  waitUntil(checkObj,returnObj) {
-    waitUntil(()=>checkObj,
-      2000
-    ).then(
-      (texture) => resolve(tSprite),
-      (err) => reject(err)
-    );
+  waitUntil:(checkDict,resolveObj) => {
+    let pFunc = (resolve, reject) => {
+      waitUntil(() => _getCheckObj(checkDict),2000).then(
+        () => resolve(resolveObj)
+      ).catch(
+        (err) => console.log(err)
+          //reject(err)
+      );
+    };
+    return new Promise(pFunc);
+  },
+  waitUntilThenTest:(checkDict,testCB) => {
+    let pFunc = (resolve, reject) => {
+      common.waitUntil(checkDict,checkDict.obj).then(
+        () => resolve(testCB())
+      ).catch(
+        (err) => reject(err)
+      );
+    };
+    let p = new Promise(pFunc);
+    return p;
   }
-}
+};
+
+let _isSpriteEquals = function (sprite, resPath){
+  //test to see some sprite properties exist
+  console.log(sprite);
+  if(sprite.texture.url === resPath){
+    return true;
+  }
+  return false;
+};
+
+let _isSprite = function(sprite){
+  //test to see some sprite properties exist
+  if(sprite._position && sprite.opacity){
+    return true;
+  }
+  return false;
+};
 
 let Sprite = {
-  create:(resPath)=>{
-    let pFunc = (resolve, reject) => {
-      let tSprite = new cc.Sprite(resPath);
-      waitUntil(tSprite.texture,tSprite);
-    };
-    return new Promise(pFunc(resolve, reject));
+  create:(resPath) => {
+    let tSprite = new cc.Sprite(resPath);
+    return common.waitUntil(tSprite.texture,tSprite,tSprite);
   },
-  checkEquals:(resPath)=>{
-    expect(texture.url).toEqual("base/"+resPath);
+  checkEquals:(sprite, resPath)=>{
+    return common.waitUntilThenTest(
+      {obj:sprite,propStr:"texture"},
+      () => _isSprite(sprite) && _isSpriteEquals(sprite,resPath));
   }
 };
 
 let test = {
-  Sprite:new Sprite(),
-  isTypeOf: (ccType,testObj,done) => {
-    switch(ccType){
-      case "Sprite":
-        return isSprite(testObj);
-      default:
-        console.error(ccType + " is not a ccType that has a defined cctestutils test");
-    }
-  }
-};
-
-
-let isTypeOf = function(){
+  common:common,
+  Sprite:Sprite
 };
 
 module.exports = test;
