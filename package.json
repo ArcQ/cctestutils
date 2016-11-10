@@ -2,7 +2,7 @@
   "name": "cctestutils",
   "version": "0.5.0",
   "description": "Boilerplate for ES6 client-based library. Uses Babel and webpack for transpiling and building, Karma and Jasmine for unit testing, and Istanbul/Isparta for code coverage.",
-  "main": "generated/dist/cctestutils.js",
+  "main": "cctestutils.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ArcQ/webpack-template"
@@ -50,7 +50,6 @@
     "karma-webpack": "^1.7.0",
     "loader-utils": "^0.2.12",
     "rimraf": "^2.5.0",
-    "wait-until-promise": "^1.0.0",
     "webpack": "^1.12.11"
   }
 }

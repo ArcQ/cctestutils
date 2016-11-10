@@ -11,6 +11,5 @@ let startup = {
     document.body.appendChild(canvasObject);
   }
 };
-console.log('start');
-startup.ccstart = require('./cocos2d/main.js');
+startup.ccstart = require('./main.js');
 module.exports = startup;

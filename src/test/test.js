@@ -1,4 +1,4 @@
-import waitUntil from 'wait-until-promise';
+const waitUntil = require('./jasmine-wait-until.js');
 
 let _getCheckObj = (checkDict) => checkDict.obj[checkDict.propStr];
 
@@ -9,8 +9,7 @@ let common = {
       waitUntil(() => _getCheckObj(checkDict),2000).then(
         () => resolve(resolveObj)
       ).catch(
-        (err) => console.log(err)
-          //reject(err)
+        (err) => reject(err) 
       );
     };
     return new Promise(pFunc);
@@ -30,7 +29,6 @@ let common = {
 
 let _isSpriteEquals = function (sprite, resPath){
   //test to see some sprite properties exist
-  console.log(sprite);
   if(sprite.texture.url === resPath){
     return true;
   }
