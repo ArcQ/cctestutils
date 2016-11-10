@@ -1,4 +1,3 @@
-import waitUntil from 'wait-until-promise';
 let startup = {
   addCanvas:()=>{
     let canvasObject = document.createElement('canvas');
