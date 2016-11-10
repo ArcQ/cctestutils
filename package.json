@@ -1,6 +1,6 @@
 {
   "name": "cctestutils",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Boilerplate for ES6 client-based library. Uses Babel and webpack for transpiling and building, Karma and Jasmine for unit testing, and Istanbul/Isparta for code coverage.",
   "main": "cctestutils.js",
   "repository": {
