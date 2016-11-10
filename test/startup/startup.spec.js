@@ -1,5 +1,5 @@
-let cctestutils = require('../../src/cctestutils.js');
-let spriteTest = cctestutils.test.Sprite;
+const cctestutils = require('../../src/cctestutils.js');
+const spriteTest = cctestutils.test.Sprite;
 
 beforeAll((done)=> {
   cctestutils.startup.addCanvas();

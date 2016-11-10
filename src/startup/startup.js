@@ -1,8 +1,8 @@
-let startup = {
+const startup = {
   addCanvas:()=>{
     let canvasObject = document.createElement('canvas');
-    let width = 800;
-    let height = 800;
+    const width = 800;
+    const height = 800;
     let myCanvas = {};  
     canvasObject.width = width;
     canvasObject.height= height;

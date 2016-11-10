@@ -1,4 +1,4 @@
-var testRes = {
+const testRes = {
     test: "base/test/res/test.png"
 };
 
