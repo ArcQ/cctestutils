@@ -1,6 +1,6 @@
 {
   "name": "cctestutils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility Functions used for cocos2djs testing using jasmine and karma",
   "main": "cctestutils.js",
   "repository": {
