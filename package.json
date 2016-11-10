@@ -1,7 +1,7 @@
 {
   "name": "cctestutils",
   "version": "1.0.0",
-  "description": "Boilerplate for ES6 client-based library. Uses Babel and webpack for transpiling and building, Karma and Jasmine for unit testing, and Istanbul/Isparta for code coverage.",
+  "description": "Utility Functions used for cocos2djs testing using jasmine and karma",
   "main": "cctestutils.js",
   "repository": {
     "type": "git",
