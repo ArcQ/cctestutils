@@ -11,7 +11,7 @@ module.exports = function(escapeFunction, timeoutLimit) {
       }
       _counter += _checkDelay;
       if(_counter > timeoutLimit){
-        reject("Timeout time limit hit.");
+        reject(new Error('Timeout limit hit'));
       }
     }, _checkDelay);
   };

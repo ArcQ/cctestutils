@@ -6,8 +6,8 @@ beforeAll((done)=> {
   cctestutils.startup.ccstart(done);
 });
 
-describe('cc library object', () => {
-  it('should be the cocos2d library object', () => {
+describe('cctestutils.startup', () => {
+  it('should fully initiate the cocos2d library object', () => {
     let sceneObj = {
       onEnter:()=>undefined,
       update:(dt)=>dt
