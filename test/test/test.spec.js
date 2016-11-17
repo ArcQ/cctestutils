@@ -12,37 +12,30 @@ describe('utils.test', () => {
 
   describe('Common tests', ()=>{
     it('should be able to use waitUntil to poll for' + 
-      'when an object gets fully initated',()=>{
+      'when an object gets fully initated',(done)=>{
         let asyncObj = {};
         setTimeout(()=>asyncObj.asyncProp = "set",500);
-        commonTest.waitUntil({obj:asyncObj,propStr:'asyncProp'}, (resolveObj)=>{
+        commonTest.waitUntil({obj:asyncObj, propStr:'asyncProp'}, asyncObj).then((resolveObj)=>{
           expect(resolveObj.asyncProp).toBe("set");
+          done();
         });
       });
-    it('should be able to use waitUntilThenTest to run' +  
-      'tests only after object fully initiates',()=>{
-        let asyncObj = {};
-        let test = () =>{
-          expect(asyncObj.asyncProp).toBe("set");
-        };
-
-        setTimeout(()=>asyncObj.asyncProp = "set",500);
-        commonTest.waitUntilThenTest({obj:asyncObj,propStr:'asyncProp'}, test);
-      });
-
-    it('waitUntil should timeout after 2000 milliseconds',()=>{
+    it('waitUntil should timeout after 2000 milliseconds',(done)=>{
       let asyncObj = {};
       let test = () =>{
         expect(asyncObj.asyncProp).toBe("set");
       };
 
       setTimeout(()=>asyncObj.asyncProp = "set",5000);
-      commonTest.waitUntilThenTest({obj:asyncObj,propStr:'asyncProp'}, (resolveObj)=>{
-        expect(asyncObj.asyncProp).toBe("set");
-      }).catch((err)=>{
-        expect(err).toBe('Timeout limit hit');
-        done();
-      });
+      commonTest.waitUntil({obj:asyncObj,propStr:'asyncProp'}, asyncObj).then(
+        (resolveObj)=>{
+          expect(asyncObj.asyncProp).toBeUndefined;
+          done();
+        }).catch((err)=>{
+          console.log(err);
+          expect(err).toBe(new Error('Timeout limit hit'));
+          done();
+        });
     });
   });
   describe('Sprite tests', ()=>{
@@ -68,8 +61,7 @@ describe('utils.test', () => {
         expect(isSprite).toBe(false);
         done();
       }).catch((err)=>{
-        expect(err).toContain('Timeout limit hit');
-        console.log('done');
+        expect(err).toContain(new Error('Timeout limit hit'));
         done();
       });
     });

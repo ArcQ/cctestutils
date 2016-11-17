@@ -22,10 +22,17 @@ let Sprite = {
     return common.waitUntil(tSprite.texture,tSprite,tSprite);
   },
   checkEquals:(sprite, resPath)=>{
-    return common.waitUntilThenTest(
-      {obj:sprite,propStr:"texture"},
-      () => _isSprite(sprite) && _isSpriteEquals(sprite,resPath)).catch(()=>{
-        resolve(false);
+    return common.waitUntil(
+      {obj:sprite,propStr:"texture"}, sprite).then(
+        (sprite) => {
+          var isSprite = false;
+          if(sprite && _isSprite(sprite) && _isSpriteEquals(sprite,resPath)){
+            isSprite = true;
+          }
+          return Promise.resolve(isSprite);
+        }
+      ).catch((err)=>{
+        reject(err);
       });
   }
 };

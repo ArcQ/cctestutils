@@ -9,21 +9,11 @@ let common = {
       waitUntil(() => _getCheckObj(checkDict),2000).then(
         () => resolve(resolveObj)
       ).catch(
-        (err) => reject(err) 
+        (err) => 
+          (err+'' == 'Error: Timeout limit hit')?resolve(undefined):reject(err)
       );
     };
     return new Promise(pFunc);
-  },
-  waitUntilThenTest:(checkDict,testCB) => {
-    let pFunc = (resolve, reject) => {
-      common.waitUntil(checkDict,checkDict.obj).then(
-        () => resolve(testCB())
-      ).catch(
-        (err) => reject(err)
-      );
-    };
-    let p = new Promise(pFunc);
-    return p;
   }
 };
 
