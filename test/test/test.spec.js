@@ -29,7 +29,7 @@ describe('utils.test', () => {
       setTimeout(()=>asyncObj.asyncProp = "set",5000);
       commonTest.waitUntil({obj:asyncObj,propStr:'asyncProp'}, asyncObj).then(
         (resolveObj)=>{
-          expect(asyncObj.asyncProp).toBeUndefined;
+          expect(asyncObj.asyncProp).toBeUndefined();
           done();
         }).catch((err)=>{
           console.log(err);
@@ -52,7 +52,7 @@ describe('utils.test', () => {
         });
     });
 
-    it('should be able to test if a sprite is is not one', (done) => {
+    it('should be able to test if a sprite is not one', (done) => {
       let emptyClass = function(){
       };
       let notSprite = new emptyClass();
@@ -66,21 +66,15 @@ describe('utils.test', () => {
       });
     });
 
-    it('should be able to fully initialize a sprite', (done) => {
-      let tSprite = spriteTest.create(testRes.test).then((sprite)=>{
-        expect(sprite.texture).toBeDefined();
-        done();
-      });
-    });
 
   });
 
   describe('Texture tests', ()=>{
 
     it('should be able to test a sprite', (done) => {
-      let tSprite = new cc.Sprite(testRes.test);
+      let tTexture  = cc.textureCache.addImage(resPath);
 
-      spriteTest.checkEquals(tSprite,testRes.test).then((isSprite)=>{
+      textureTest.checkEquals(tTexture, testRes.test).then((isSprite)=>{
         expect(isSprite).toBe(true);
         done();
       }).catch(

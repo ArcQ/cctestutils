@@ -18,7 +18,7 @@ let _isTexture = function(texture){
 let texture = {
   create:(resPath) => {
     let tTexture = cc.textureCache.addImage(resPath);
-    return common.waitUntil(tTexture.texture,tTexture);
+    return common.waitUntil({obj:tTexture, propStr:'texture'}, tTexture);
   },
   checkEquals:(texture, resPath)=>{
     return common.waitUntilThenTest(

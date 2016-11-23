@@ -19,7 +19,7 @@ let _isSprite = function(sprite){
 let Sprite = {
   create:(resPath) => {
     let tSprite = new cc.Sprite(resPath);
-    return common.waitUntil(tSprite.texture,tSprite,tSprite);
+    return common.waitUntil({obj:tSprite,propStr:'texture'},tSprite);
   },
   checkEquals:(sprite, resPath)=>{
     return common.waitUntil(
