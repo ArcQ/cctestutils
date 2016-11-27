@@ -1,4 +1,4 @@
-let cctestutils = require('cctestutils');
+const cctestutils = require('../../src/cctestutils.js');
 let spriteTest = cctestutils.test.Sprite;
 
 beforeAll((done)=> {
