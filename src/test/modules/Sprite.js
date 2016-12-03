@@ -32,7 +32,7 @@ let Sprite = {
           return Promise.resolve(isSprite);
         }
       ).catch((err)=>{
-        reject(err);
+        return Promise.reject(err);
       });
   }
 };
