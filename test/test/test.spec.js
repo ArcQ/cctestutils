@@ -11,6 +11,7 @@ beforeAll((done)=> {
 describe('utils.test', () => {
 
   describe('Common tests', ()=>{
+
     it('should be able to use waitUntil to poll for' + 
       'when an object gets fully initated',(done)=>{
         let asyncObj = {};
@@ -20,6 +21,7 @@ describe('utils.test', () => {
           done();
         });
       });
+
     it('waitUntil should timeout after 2000 milliseconds',(done)=>{
       let asyncObj = {};
       let test = () =>{
@@ -66,16 +68,27 @@ describe('utils.test', () => {
       });
     });
 
+    it('should be able to fully initiate a sprite', (done) => {
+      spriteTest.create(testRes.test).then(function(sprite){
+        return spriteTest.checkEquals(sprite,testRes.test);
+      }).then((isSprite)=>{
+        expect(isSprite).toBe(true);
+        done();
+      }).catch((err)=>{
+        expect(err).toContain(new Error('Timeout limit hit'));
+        done();
+      });
+    });
 
   });
 
   describe('Texture tests', ()=>{
 
-    it('should be able to test a sprite', (done) => {
-      let tTexture  = cc.textureCache.addImage(resPath);
+    it('should be able to test a texture', (done) => {
+      let tTexture  = cc.textureCache.addImage(testRes.test);
 
-      textureTest.checkEquals(tTexture, testRes.test).then((isSprite)=>{
-        expect(isSprite).toBe(true);
+      textureTest.checkEquals(tTexture, testRes.test).then((isTexture)=>{
+        expect(isTexture).toBe(true);
         done();
       }).catch(
         (err)=>{
@@ -84,17 +97,34 @@ describe('utils.test', () => {
         });
     });
 
-    it('should be able to fully initialize a sprite', (done) => {
-      let tSprite = new cc.Sprite(testRes.test);
+    it('should be able to test if a texture is not one', (done) => {
+      let emptyClass = function(){
+      };
+      let notTexture = new emptyClass();
 
-      spriteTest.checkEquals(tSprite,testRes.test).then((isSprite)=>{
-        expect(isSprite).toBe(true);
+      textureTest.checkEquals(notTexture ,testRes.test).then((isTexture)=>{
+        expect(isTexture).toBe(false);
         done();
       }).catch(
         (err)=>{
-          expect(err).toBeNull();
+          expect(err).toContain(new Error('Timeout limit hit'));
           done();
         });
+    });
+
+    it('should be able to fully initialize a texture', (done) => {
+      let tTexture = new cc.Sprite(testRes.test);
+
+      textureTest.create(testRes.test).then(function(texture){
+        return textureTest.checkEquals(texture,testRes.test);
+      }).then((isTexture)=>{
+        expect(isTexture).toBe(true);
+        done();
+      }).catch((err)=>{
+        expect(err).toContain(new Error('Timeout limit hit'));
+        done();
+      });
+
     });
 
   });
