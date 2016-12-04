@@ -13,17 +13,14 @@
     "dist": "npm run test:dist && rimraf dist && NODE_ENV=dist webpack --config ./config/webpack.config.js && sh bin/buildDist.sh",
     "release": "sh ./bin/release.sh",
     "test:dist": "karma start --single-run --no-auto-watch config/karma.conf.js",
-    "preversion": "git checkout master && git merge develop && npm run test:dist",
+    "preversion": "git checkout master && git merge develop",
     "version": "npm run dist",
-    "postversion": "git add -A && git push --tags && git push origin master && npm publish "
+    "postversion": "git add -A && git push --tags && git push origin master && cd generated/dist && npm publish && cd ../../"
   },
   "watch": {
     "build": "{src,test}/*.js"
   },
   "keywords": [
-    "cocos2djs",
-    "jasmine",
-    "karma"
   ],
   "author": [
     "Eddie Law"
