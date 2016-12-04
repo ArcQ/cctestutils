@@ -1,6 +1,6 @@
 {
   "name": "cctestutils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Utility Functions used for cocos2djs testing using jasmine and karma",
   "main": "cctestutils.js",
   "repository": {
@@ -15,13 +15,12 @@
     "test:dist": "karma start --single-run --no-auto-watch config/karma.conf.js",
     "preversion": "git checkout master && git merge develop",
     "version": "npm run dist",
-    "postversion": "git add -A && git push --tags && git push origin master && cd generated/dist && npm publish && cd ../../"
+    "postversion": "git add -A && git push --tags && git push origin master && npm publish generated/dist"
   },
   "watch": {
     "build": "{src,test}/*.js"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": [
     "Eddie Law"
   ],

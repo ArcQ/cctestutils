@@ -1,0 +1,1 @@
+cd generated/dist/
